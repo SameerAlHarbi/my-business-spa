@@ -1,0 +1,12 @@
+.container{
+    margin-top:20px; 
+}
+
+.container h1{
+    color:darkblue;
+    font-style: italic;
+}
+
+ul{
+    margin-top:40px; 
+}
