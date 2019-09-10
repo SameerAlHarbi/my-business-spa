@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-12">
+        <button type="button" 
+        class="btn btn-info" 
+        style="min-width: 175px;"
+        (click)="onNewBanks()" 
+        [disabled]="creating">
+            <i [ngClass]="{'fas':true, 'fa-plus': !creating, 'fa-spinner fa-spin': creating }"></i>
+               {{ creating ? 'Adding' : 'Add' }} New Bank
+        </button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class='col-sm-12'>
+        <div class="list-group">
+            <app-bank-item 
+            *ngFor="let bank of banks; let i = index;"
+            [bankItem]="bank"
+            [index]="i"></app-bank-item>
+        </div>
+    </div>
+</div>

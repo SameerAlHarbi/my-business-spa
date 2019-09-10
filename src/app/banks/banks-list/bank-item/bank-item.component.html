@@ -1,0 +1,21 @@
+
+<a  [routerLink]="[index]"
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action clearfix">
+        <div class="d-flex w-100 justify-content-between">
+            <div>
+                <h5>{{bankItem.name}}</h5>
+                <small>{{bankItem.accountNumber}}</small>
+            </div>
+            <div>
+                    <img
+                    [src]="bankItem.imagePath"
+                    [alt]="bankItem.name"
+                    class="img-responsive"
+                    style="max-height: 50px;">
+            </div>
+        </div>
+</a>
+
+<!-- [src]="recipe.imagePath"
+                    alt="{{ recipe.name }}" -->
