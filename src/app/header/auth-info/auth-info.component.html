@@ -1,0 +1,11 @@
+<div>
+    <div *ngIf="!userAuthenticated; else welcomeUser">
+        <button class="btn btn-primary" style="width: 90px" (click)="onLogin()">Login</button>
+        <button class="btn btn-secondary" style="width: 90px; margin-left:5px; ">Register</button>
+    </div>
+    <ng-template #welcomeUser>
+        <h6 style="color: gray">Welcome, Sameer Al Harbi</h6>
+        <button class="btn btn-secondary btn-block" (click)="onLogout()">Logout</button>
+    </ng-template>
+    
+</div>

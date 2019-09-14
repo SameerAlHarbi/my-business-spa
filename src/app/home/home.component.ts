@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  userInput: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onInput(event: Event) {
+    console.log(event);
+    this.userInput = (event.target as HTMLInputElement).value;
   }
 
 }

@@ -13,6 +13,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { BanksComponent } from './banks/banks.component';
 import { BanksListComponent } from './banks/banks-list/banks-list.component';
 import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.component';
+import { AuthInfoComponent } from './header/auth-info/auth-info.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.compon
     ErrorPageComponent,
     BanksComponent,
     BanksListComponent,
-    BankItemComponent
+    BankItemComponent,
+    AuthInfoComponent
   ],
   imports: [
     BrowserModule,
