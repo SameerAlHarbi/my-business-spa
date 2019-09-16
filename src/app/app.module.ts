@@ -14,6 +14,7 @@ import { BanksComponent } from './banks/banks.component';
 import { BanksListComponent } from './banks/banks-list/banks-list.component';
 import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.component';
 import { AuthInfoComponent } from './header/auth-info/auth-info.component';
+import { BankDetailsComponent } from './banks/bank-details/bank-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthInfoComponent } from './header/auth-info/auth-info.component';
     BanksComponent,
     BanksListComponent,
     BankItemComponent,
-    AuthInfoComponent
+    AuthInfoComponent,
+    BankDetailsComponent
   ],
   imports: [
     BrowserModule,
