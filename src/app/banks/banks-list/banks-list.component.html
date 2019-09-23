@@ -1,9 +1,9 @@
 <div class="d-flex w-100 justify-content-between">
     <!-- <h5><i class="fas fa-money-check-alt"></i> Banks List</h5> -->
-    <button type="button" 
-            class="btn btn-outline-dark" 
+    <button type="button"
+            class="btn btn-outline-dark"
             style="min-width: 175px;"
-            (click)="onNewBanks()" 
+            (click)="onNewBanks()"
             [disabled]="creating">
                 <i [ngClass]="{'fas':true, 'fa-plus': !creating, 'fa-spinner fa-spin': creating }"></i>
                    {{ creating ? 'Adding' : 'Add' }} New Bank
@@ -13,7 +13,7 @@
 <div class="row">
     <div class='col-sm-12'>
         <div class="list-group">
-            <app-bank-item 
+            <app-bank-item
             *ngFor="let bank of banks; let i = index;"
             [bankItem]="bank"
             [index]="i"></app-bank-item>

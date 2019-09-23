@@ -15,6 +15,9 @@ import { BanksListComponent } from './banks/banks-list/banks-list.component';
 import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.component';
 import { AuthInfoComponent } from './header/auth-info/auth-info.component';
 import { BankDetailsComponent } from './banks/bank-details/bank-details.component';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import { UnlessDirective } from './shared/directives/unless.directive';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { BankDetailsComponent } from './banks/bank-details/bank-details.componen
     BanksListComponent,
     BankItemComponent,
     AuthInfoComponent,
-    BankDetailsComponent
+    BankDetailsComponent,
+    HighlightDirective,
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
