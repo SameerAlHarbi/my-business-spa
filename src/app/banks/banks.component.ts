@@ -10,9 +10,12 @@ import { BanksService } from './banks.service';
 })
 export class BanksComponent implements OnInit {
 
+  totalCash: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.totalCash = 0;
   }
 
 }

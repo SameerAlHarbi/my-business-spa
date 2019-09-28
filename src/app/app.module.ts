@@ -18,6 +18,7 @@ import { BankDetailsComponent } from './banks/bank-details/bank-details.componen
 import { HighlightDirective } from './shared/directives/highlight.directive';
 import { UnlessDirective } from './shared/directives/unless.directive';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
+import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
     BankDetailsComponent,
     HighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    BankEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,15 @@
-<p>bank-details works!</p>
+<div class="d-flex w-100 justify-content-between">
+  <h4>Bank Details</h4>
+  <a class="btn btn-outline-success"
+    style="min-width: 94px"
+    [routerLink]="['edit']"
+    [queryParams]="{allowEdit:'true'}"><i class="fas fa-pencil-alt"></i> Edit</a>
+</div>
+
+<hr>
+
+
+{{bank.code}}
+
+<br>
+<button class="btn btn-success" (click)="onEdit()"><i class="fas fa-pencil-alt"></i> Edit</button>

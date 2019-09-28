@@ -1,11 +1,12 @@
 
-<a  appHighlight="#edf6fd" defaultColor='white' [routerLink]="[index]"
+<a  [routerLink]="[bankItem.code]"
     routerLinkActive="active"
+    [queryParams]="{allowEdit:'true'}"
     class="list-group-item list-group-item-action clearfix">
         <div class="d-flex w-100 justify-content-between">
             <div>
                 <h5>{{bankItem.name}}</h5>
-                <small>{{bankItem.accountNumber}}</small>
+                <small>{{bankItem.code}}</small>
             </div>
             <div>
                     <img

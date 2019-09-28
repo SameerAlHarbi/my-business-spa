@@ -4,7 +4,7 @@ import { Directive, ElementRef, OnInit, Renderer2, HostListener, HostBinding, In
   selector: '[appHighlight]'
 })
 export class HighlightDirective implements OnInit {
-  @Input() defaultColor = 'white';
+  @Input() defaultColor = 'transparent';
   @Input('appHighlight') highlightColor = 'blue';
 
   @HostBinding('style.backgroundColor') backgroundColor;
