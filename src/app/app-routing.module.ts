@@ -10,7 +10,10 @@ import { AuthGurad } from './auth-guard.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
-  {path: 'banks', canActivate: [AuthGurad], component: BanksComponent , children: [
+  {path: 'banks'
+    // , canActivate: [AuthGurad]
+    , canActivateChild: [AuthGurad]
+    , component: BanksComponent , children: [
     { path: ':code', component: BankDetailsComponent},
     { path: ':code/edit', component: BankEditComponent},
     // { path: 'new', component: BankEditComponent},
