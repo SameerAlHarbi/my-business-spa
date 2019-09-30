@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { BanksService } from '../banks.service';
+import { CanComponentDeativate } from 'src/app/can-deactivate-guard.srvice';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bank-edit',
   templateUrl: './bank-edit.component.html',
   styleUrls: ['./bank-edit.component.css']
 })
-export class BankEditComponent implements OnInit {
+export class BankEditComponent implements OnInit, CanComponentDeativate {
 
   bankId: number;
   allowEdit = false;
@@ -33,4 +35,7 @@ export class BankEditComponent implements OnInit {
     }
   }
 
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    return confirm('are you sure');
+  }
 }

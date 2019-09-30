@@ -7,6 +7,7 @@ import { BanksComponent } from './banks/banks.component';
 import { BankDetailsComponent} from './banks/bank-details/bank-details.component'
 import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
 import { AuthGurad } from './auth-guard.service';
+import { CanDeactivateGuard } from './can-deactivate-guard.srvice';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -15,7 +16,7 @@ const routes: Routes = [
     , canActivateChild: [AuthGurad]
     , component: BanksComponent , children: [
     { path: ':code', component: BankDetailsComponent},
-    { path: ':code/edit', component: BankEditComponent},
+    { path: ':code/edit', component: BankEditComponent, canDeactivate: [CanDeactivateGuard]},
     // { path: 'new', component: BankEditComponent},
   ]},
   {path: 'about', component: AboutComponent},
@@ -24,7 +25,7 @@ const routes: Routes = [
   ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

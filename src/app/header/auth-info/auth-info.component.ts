@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-auth-info',
@@ -9,16 +11,26 @@ export class AuthInfoComponent implements OnInit {
 
   userAuthenticated = true;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService
+      .loggedInChanged.subscribe(
+      () => {
+        this.authService
+        .isAuthenticated().then(
+          (authenticated: boolean) => {
+            this.userAuthenticated = authenticated;
+          });
+      });
   }
 
   onLogin(){
-    this.userAuthenticated= true;
+    this.authService.login();
   }
 
   onLogout() {
-    this.userAuthenticated= false;
+    this.authService.logout();
   }
+
 }

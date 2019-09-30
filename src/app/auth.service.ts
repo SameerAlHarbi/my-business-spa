@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-  loggedIn = false;
+  loggedInChanged = new EventEmitter<void>();
+
+  private loggedIn = false;
 
   isAuthenticated() {
     const promise = new Promise(
@@ -19,10 +21,12 @@ export class AuthService {
 
   login() {
     this.loggedIn = true;
+    this.loggedInChanged.emit();
   }
 
   logout() {
     this.loggedIn = false;
+    this.loggedInChanged.emit();
   }
 
 }
